@@ -116,7 +116,7 @@ write_mdp_files(temp=user_temp, ns_length=float(user_ns))
 # Step 1: Topology
 pdb_name = input("PDB file name (without .pdb): ").strip()
 # Use '8' for CHARMM27 as suggested in notes 
-run_step(f"gmx_mpi pdb2gmx -f {pdb_name}.pdb -o protein_processed.gro -water spce -ignh", input_val="8")
+run_step(f"gmx_mpi pdb2gmx -f {pdb_name}.pdb -o protein_processed.gro -water tips3p -ignh", input_val="8")
 
 # Step 2: Box & Solvate
 run_step("gmx_mpi editconf -f protein_processed.gro -o box.gro -c -d 1.0 -bt cubic")
@@ -140,5 +140,6 @@ run_step("gmx_mpi mdrun -v -deffnm npt")
 # Step 5: Production
 run_step(f"gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_{user_ns}ns.tpr")
 run_step(f"gmx_mpi mdrun -v -deffnm md_{user_ns}ns")
+
 
 print(f"\nSimulation complete for {user_ns}ns at {user_temp}K!")
