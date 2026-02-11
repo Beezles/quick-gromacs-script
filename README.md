@@ -10,7 +10,7 @@ IF THAT DOESNT WORK THEN DO THE FOLLOWING
 -> nano ~/bin/gmx_auto
 
 paste the code, 
-press ctrl + O to save,
+press ctrl + O to save then hit enter,
 press ctrl + X to exit,
 
 Make it executable
