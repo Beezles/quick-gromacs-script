@@ -3,8 +3,8 @@ For easy access do the following:
 Create a local bin folder if you havent already
 -> mkdir -p ~/bin
 
-Upload the script into this folder using git commit
--> git commit https://github.com/Beezles/quick-gromacs-script
+Upload the script into this folder using git clone
+-> git clone https://github.com/Beezles/quick-gromacs-script
 
 IF THAT DOESNT WORK THEN DO THE FOLLOWING
 -> nano ~/bin/gmx_auto
